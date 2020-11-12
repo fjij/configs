@@ -127,6 +127,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'elmcast/elm-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-sensible'
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
@@ -143,6 +144,9 @@ let g:netrw_banner = 0       " Don't show banner
 let g:netrw_browse_split = 4 " Open files in previous window
 let g:netrw_liststyle = 3    " Tree view
 let g:netrw_altv = 1
+
+" Nord
+:colorscheme nord
 
 " Ripgrep
 if executable('rg')
@@ -163,3 +167,5 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+set updatetime=300
+set shortmess+=c
