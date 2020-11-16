@@ -121,7 +121,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'leafgarland/typescript-vim'
   Plug 'vim-utils/vim-man'
-  Plug 'lyuts/vim-rtags'
   Plug 'kien/ctrlp.vim'
   Plug 'mbbill/undotree'
   Plug 'elmcast/elm-vim'
