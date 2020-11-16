@@ -1,5 +1,6 @@
 #!/bin/bash
 
 # Copy files to their correct locations
+mkdir -p ~/.config/nvim
 cp ./init.vim ~/.config/nvim/init.vim
 cp ./.tmux.conf ~/.tmux.conf
