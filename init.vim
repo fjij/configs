@@ -125,6 +125,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-sensible'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
