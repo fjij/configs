@@ -1,0 +1,13 @@
+[user]
+	name = fjij
+	email = 30779570+fjij@users.noreply.github.com
+[alias]
+	sla = log --graph --all --pretty=format:'%C(yellow)%h%C(reset) %an [%C(green)%ar%C(reset)] %s'
+[core]
+	editor = nvim
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+[difftool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE
