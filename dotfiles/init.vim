@@ -58,7 +58,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 " netrw tree
 nnoremap <leader>pv :wincmd v<bar> :Explore <bar> :vertical resize 30<CR>
-nnoremap <leader>ps :Rg<SPACE>
+nnoremap <leader>ps :Rg<CR>
 
 " coc
 inoremap <silent><expr> <TAB>
@@ -95,14 +95,17 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <leader>rn <Plug>(coc-rename)
 
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 " tabs
 nnoremap <leader>te :tabe<SPACE>
 nnoremap <leader>tl :tabn<CR>
 nnoremap <leader>th :tabp<CR>
 nnoremap <leader>tq :tabclose<CR>
+
+" fzf
+nnoremap <leader>f :FZF<CR>
 
 " PLUGINS
 " ------------------------------------------------------------------------------
@@ -115,7 +118,7 @@ endif
 
 " Plugins
 call plug#begin(stdpath('data') . '/plugged')
-  Plug 'jremmen/vim-ripgrep'
+  "Plug 'jremmen/vim-ripgrep'
   Plug 'tpope/vim-fugitive'
   Plug 'leafgarland/typescript-vim'
   Plug 'vim-utils/vim-man'
@@ -126,6 +129,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'arcticicestudio/nord-vim'
   Plug 'tpope/vim-surround'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-rooter'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
@@ -167,3 +173,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 set updatetime=300
 set shortmess+=c
+
+" fzf ripgrep
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
