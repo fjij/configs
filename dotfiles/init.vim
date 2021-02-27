@@ -125,9 +125,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'elmcast/elm-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-sensible'
-  Plug 'arcticicestudio/nord-vim'
+  Plug 'gruvbox-community/gruvbox'
   Plug 'tpope/vim-surround'
-  Plug 'airblade/vim-rooter'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
@@ -139,7 +138,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Nord
-:colorscheme nord
+:colorscheme gruvbox
 
 " Ripgrep
 if executable('rg')
