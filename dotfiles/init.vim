@@ -15,7 +15,7 @@ syntax on
 
 " Folding
 set foldmethod=syntax
-set foldlevel=99
+set foldlevelstart=99
 
 " Tabs
 set tabstop=2
@@ -23,6 +23,9 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
+
+autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 " Backups
 set noswapfile
@@ -127,6 +130,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'gruvbox-community/gruvbox'
   Plug 'tpope/vim-surround'
+  Plug 'tomlion/vim-solidity'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
