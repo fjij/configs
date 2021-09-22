@@ -24,8 +24,14 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
+" Disable Modelines
+set modelines=0
+set nomodeline
+
+" Specific filetypes
 autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 " Backups
 set noswapfile
