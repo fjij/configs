@@ -11,3 +11,5 @@
   tool = vimdiff
 [difftool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE
+[pager]
+	branch = false
