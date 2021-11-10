@@ -31,6 +31,7 @@ set nomodeline
 " Specific filetypes
 autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType solidity setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 " Backups
@@ -136,7 +137,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'gruvbox-community/gruvbox'
   Plug 'tpope/vim-surround'
-  Plug 'tomlion/vim-solidity'
+  Plug 'TovarishFin/vim-solidity'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
