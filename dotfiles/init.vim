@@ -138,6 +138,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'gruvbox-community/gruvbox'
   Plug 'tpope/vim-surround'
   Plug 'TovarishFin/vim-solidity'
+  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
