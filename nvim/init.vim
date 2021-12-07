@@ -109,6 +109,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
