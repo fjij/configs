@@ -139,6 +139,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-surround'
   Plug 'TovarishFin/vim-solidity'
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
