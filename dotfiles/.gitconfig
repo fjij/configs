@@ -9,7 +9,10 @@
   tool = vimdiff
 [merge]
   tool = vimdiff
+	conflictstyle = diff3
 [difftool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE
 [pager]
 	branch = false
+[init]
+	defaultBranch = main
