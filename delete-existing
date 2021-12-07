@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Delete existing dotfiles
+rm -rf ~/.config/nvim ~/.tmux.conf ~/.gitconfig
