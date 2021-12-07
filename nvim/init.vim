@@ -28,6 +28,9 @@ set expandtab
 set modelines=0
 set nomodeline
 
+" Disable hidden
+set nohidden
+
 " Specific filetypes
 autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
@@ -56,7 +59,6 @@ set guicursor=
 " Don't start in replace mode fix
 set t_u7=
 
-
 " REMAPS
 " ------------------------------------------------------------------------------
 let mapleader = " "
@@ -65,55 +67,22 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
-
-nnoremap <leader>pv :CocCommand explorer<CR>
-nnoremap <leader>ps :Rg<SPACE>
-
-" coc
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-inoremap <silent><expr> <c-space> coc#refresh()
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-nmap <leader>rn <Plug>(coc-rename)
-
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
+nnoremap <leader>q :q<CR>
 
 " tabs
-nnoremap <leader>te :tabe<SPACE>
-nnoremap <leader>tl :tabn<CR>
-nnoremap <leader>th :tabp<CR>
-nnoremap <leader>tq :tabclose<CR>
-
+nnoremap <leader><S-tab> :tabprevious<CR>
+nnoremap <leader><tab> :tabnext<CR>
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 10gt
 
 " PLUGINS
 " ------------------------------------------------------------------------------
@@ -130,7 +99,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'leafgarland/typescript-vim'
   Plug 'vim-utils/vim-man'
-  Plug 'kien/ctrlp.vim'
   Plug 'mbbill/undotree'
   Plug 'elmcast/elm-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -147,32 +115,3 @@ call plug#end()
 if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
-" PLUGIN-SPECIFIC
-" ------------------------------------------------------------------------------
-
-" Nord
-:colorscheme gruvbox
-
-" Ripgrep
-if executable('rg')
-  let g:rg_derive_root='true'
-endif
-
-" CtrlP
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching = 0 
-
-" Tmux (not actually a plugin)
-autocmd VimResized * :wincmd = " auto resize vim size on tmux size change
-
-" coc
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-set updatetime=300
-set shortmess+=c
-
