@@ -34,6 +34,7 @@ set nohidden
 " Specific filetypes
 autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType solidity setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
