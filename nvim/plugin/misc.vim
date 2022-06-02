@@ -1,7 +1,7 @@
 " Color scheme
 :colorscheme gruvbox
 " Support transparent bg
-hi! Normal ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
 
 " Ripgrep
 if executable('rg')
