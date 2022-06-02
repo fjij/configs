@@ -37,6 +37,7 @@ autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType solidity setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+autocmd FileType markdown setlocal textwidth=80
 
 " Backups
 set noswapfile
@@ -111,7 +112,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'mhinz/vim-startify'
-  Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
