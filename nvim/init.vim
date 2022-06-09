@@ -16,6 +16,10 @@ syntax on
 " Folding
 set foldmethod=syntax
 set foldlevelstart=99
+set foldtext=substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend))
+set foldnestmax=3
+set foldminlines=1
+set fillchars=fold:\ 
 
 " Tabs
 set tabstop=2
