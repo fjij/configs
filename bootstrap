@@ -1,15 +1,10 @@
 #!/bin/bash
 
 # Setup symlinks
-mkdir -p ~/.config
-ln -s $PWD/nvim ~/.config/
-ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
-ln -s $PWD/git/gitconfig ~/.gitconfig
-
-if [[ ":$PATH:" != *":$PWD/scripts:"* ]]; then
-  echo "add scripts directory to path:"
-  echo ""
-  echo "echo \"export PATH=\\\"$PWD/scripts:\${PATH}\\\"\" >> ~/.zprofile"
-  echo "source ~/.zprofile"
-fi
-
+mkdir -p $HOME/.config
+ln -s $PWD/nvim $HOME/.config/
+ln -s $PWD/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $PWD/git/gitconfig $HOME/.gitconfig
+ln -s $PWD/zsh/zshrc $HOME/.zshrc
+ln -s $PWD/zsh/zprofile $HOME/.zprofile
+ln -s $PWD/scripts $HOME
