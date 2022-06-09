@@ -5,3 +5,11 @@ mkdir -p ~/.config
 ln -s $PWD/nvim ~/.config/
 ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 ln -s $PWD/git/gitconfig ~/.gitconfig
+
+if [[ ":$PATH:" != *":$PWD/scripts:"* ]]; then
+  echo "add scripts directory to path:"
+  echo ""
+  echo "echo \"export PATH=\\\"$PWD/scripts:\${PATH}\\\"\" >> ~/.zprofile"
+  echo "source ~/.zprofile"
+fi
+
