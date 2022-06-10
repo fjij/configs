@@ -1,10 +1,33 @@
 #!/bin/bash
 
+symlink() {
+  TARGET=$(readlink $2)
+  if [ "$TARGET" != "$1" ]; then
+    ln -sn $1 $2
+  fi
+}
+
 # Setup symlinks
 mkdir -p $HOME/.config
-ln -s $PWD/nvim $HOME/.config/
-ln -s $PWD/tmux/tmux.conf $HOME/.tmux.conf
-ln -s $PWD/git/gitconfig $HOME/.gitconfig
-ln -s $PWD/zsh/zshrc $HOME/.zshrc
-ln -s $PWD/zsh/zprofile $HOME/.zprofile
-ln -s $PWD/scripts $HOME
+symlink $PWD/nvim $HOME/.config/nvim
+symlink $PWD/tmux/tmux.conf $HOME/.tmux.conf
+symlink $PWD/git/gitconfig $HOME/.gitconfig
+symlink $PWD/zsh/zshrc $HOME/.zshrc
+symlink $PWD/zsh/zprofile $HOME/.zprofile
+symlink $PWD/scripts $HOME/scripts
+
+which -s brew
+if [[ $? != 0 ]] ; then
+  read -p "Homebrew is not installed. Install brew (y/n)? " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+      [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+  fi
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew bundle
+else
+  brew update
+  brew bundle
+fi
+
