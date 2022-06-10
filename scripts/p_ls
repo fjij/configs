@@ -3,13 +3,18 @@
 project_status() {
   cd ~/projects/$1;
   SHORT_STATUS=$(git status -s 2>/dev/null);
+  BEHIND_STATUS=$(git status -sb 2>/dev/null);
   if [ "$SHORT_STATUS" ]; then
     echo "✗ $1"
   else
     if [ ! -e '.git' ]; then
       echo "? $1"
     else
-      echo "  $1"
+      if [[ $BEHIND_STATUS == *"ahead"* ]]; then
+        echo "↑ $1"
+      else
+        echo "  $1"
+      fi
     fi
   fi
 }
