@@ -53,18 +53,6 @@ subcommand_new() {
   attach_to_project;
 }
 
-project_status() {
-  cd ~/projects/$1;
-  SHORT_STATUS=$(git status -s 2>/dev/null);
-  if [ "$SHORT_STATUS" ]; then
-    echo $1
-  fi
-}
-
-subcommand_status() {
-  export -f project_status
-  ls ~/projects | xargs -n 1 bash -c 'project_status "$0"'
-}
 
 subcommand_error() {
   echo "unknown subcommand";
@@ -74,8 +62,8 @@ subcommand_error() {
 SUBCOMMMAND=$1
 
 case "$SUBCOMMMAND" in
-  ("")        subcommand_fzf       ;;
-  ("new")     subcommand_new    $2 ;;
-  ("status")  subcommand_status    ;;
-  (*)         subcommand_error     ;;
+  ("")       subcommand_fzf      ;;
+  ("new")    subcommand_new   $2 ;;
+  ("ls")     p_ls $2;;
+  (*)        subcommand_error    ;;
 esac
