@@ -1,5 +1,5 @@
 " Color scheme
-:colorscheme gruvbox
+:colorscheme catppuccin
 :highlight Folded ctermbg=None ctermfg=DarkGrey
 " Support transparent bg
 " hi! Normal ctermbg=NONE guibg=NONE

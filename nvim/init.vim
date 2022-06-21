@@ -109,7 +109,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'elmcast/elm-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-sensible'
-  Plug 'gruvbox-community/gruvbox'
+  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'tpope/vim-surround'
   Plug 'TovarishFin/vim-solidity'
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
