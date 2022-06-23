@@ -5,8 +5,7 @@ set number
 set relativenumber
 
 " Columns
-let &colorcolumn="".join(range(81,999),",")
-highlight ColorColumn ctermbg=8
+set textwidth=80
 set nowrap
 
 " Syntax
@@ -116,6 +115,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'whatyouhide/vim-lengthmatters'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
