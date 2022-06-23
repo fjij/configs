@@ -1,5 +1,3 @@
-nnoremap <leader>pv :CocCommand explorer<CR>
-
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :

@@ -1,12 +1,11 @@
-" GENERAL
-" ------------------------------------------------------------------------------
+" General ----------------------------------------------------------------------
 
 " Line Numbers
 set number
 set relativenumber
 
 " Columns
-set colorcolumn=80
+let &colorcolumn="".join(range(81,999),",")
 highlight ColorColumn ctermbg=8
 set nowrap
 
@@ -65,8 +64,8 @@ set guicursor=
 " Don't start in replace mode fix
 set t_u7=
 
-" REMAPS
-" ------------------------------------------------------------------------------
+" Remaps -----------------------------------------------------------------------
+
 let mapleader = " "
 
 nnoremap <leader>h :wincmd h<CR>
@@ -90,8 +89,8 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 10gt
 
-" PLUGINS
-" ------------------------------------------------------------------------------
+" Plugins ----------------------------------------------------------------------
+
 " Install vim-plug if not found
 if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -115,6 +114,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
