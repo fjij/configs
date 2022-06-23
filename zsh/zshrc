@@ -6,3 +6,4 @@ source $ZSH/oh-my-zsh.sh
 
 # my stuff
 alias cat=bat
+autoload -U compinit; compinit

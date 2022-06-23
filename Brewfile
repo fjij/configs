@@ -1,5 +1,6 @@
 brew "autojump"
 brew "bat"
+brew "charmbracelet/tap/melt"
 brew "cloudflare/cloudflare/cloudflared"
 brew "deno"
 brew "ethereum/ethereum/ethereum"
