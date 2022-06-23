@@ -47,13 +47,6 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 
-" Column errors/warnings
-if has("patch-8.1.1564")
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
 " Search
 set incsearch
 
