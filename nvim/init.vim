@@ -109,6 +109,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'whatyouhide/vim-lengthmatters'
+  Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
