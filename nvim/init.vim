@@ -1,15 +1,10 @@
-" General ----------------------------------------------------------------------
+lua << EOF
+require("options")
+require("remaps")
+EOF
 
-" Line Numbers
-set number
-set relativenumber
-
-" Columns
-set textwidth=80
-set nowrap
-
-" Syntax
-syntax on
+" TODO fix this in lua
+set undodir=~/.vim/undodir
 
 " Folding
 set foldmethod=syntax
@@ -19,20 +14,6 @@ set foldnestmax=3
 set foldminlines=1
 set fillchars=fold:\ 
 
-" Tabs
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set autoindent
-set expandtab
-
-" Disable Modelines
-set modelines=0
-set nomodeline
-
-" Disable hidden
-set nohidden
-
 " Specific filetypes
 autocmd FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
@@ -40,46 +21,6 @@ autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType solidity setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType markdown setlocal textwidth=80
-
-" Backups
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-
-" Search
-set incsearch
-
-" Don't use that weird nvim cursor
-set guicursor=
-
-" Don't start in replace mode fix
-set t_u7=
-
-" Remaps -----------------------------------------------------------------------
-
-let mapleader = " "
-
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>q :q<CR>
-
-" tabs
-nnoremap <leader><S-tab> :tabprevious<CR>
-nnoremap <leader><tab> :tabnext<CR>
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-nnoremap <leader>0 10gt
 
 " Plugins ----------------------------------------------------------------------
 
