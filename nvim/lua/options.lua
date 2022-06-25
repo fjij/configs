@@ -28,6 +28,9 @@ utils.set("backup", false)
 -- utils.set("undodir", "~/.vim/undodir")
 utils.set("undofile", true)
 
+-- Sign column
+utils.set("signcolumn", "number")
+
 -- Search
 utils.set("incsearch", true)
 
