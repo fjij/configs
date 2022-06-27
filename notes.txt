@@ -1,0 +1,7 @@
+notes.txt
+
+- install oh-my-zsh
+- lite install ( no ffmpeg, youtube-dl, etc )
+- fix homebrew perms
+  (https://gist.github.com/stefanschmidt/047001373d1defc90b6bdd7820e92cf7)
+- actually save melt key somewhere
