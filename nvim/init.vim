@@ -49,7 +49,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'whatyouhide/vim-lengthmatters'
   Plug 'preservim/nerdcommenter'
 call plug#end()
 

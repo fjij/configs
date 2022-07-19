@@ -6,6 +6,7 @@ utils.set("relativenumber", true)
 
 -- Columns
 utils.set("textwidth", 80)
+utils.set("colorcolumn", "81")
 utils.set("wrap", 0)
 
 -- Tabs
