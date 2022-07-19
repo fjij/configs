@@ -1,7 +1,7 @@
-brew "autojump"
 brew "bat"
 brew "cloudflare/cloudflare/cloudflared"
 brew "deno"
+brew "direnv"
 brew "ethereum/ethereum/ethereum"
 brew "fzf"
 brew "gawk"
