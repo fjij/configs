@@ -5,6 +5,7 @@
 	sla = log --graph --all --pretty=format:'%C(yellow)%h%C(reset) %an [%C(green)%ar%C(reset)] %s'
 [core]
 	editor = nvim
+  excludesfile = ~/.gitignore
 [diff]
   tool = vimdiff
 [merge]
