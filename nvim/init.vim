@@ -50,6 +50,10 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'preservim/nerdcommenter'
+  Plug 'othree/html5.vim'
+  Plug 'pangloss/vim-javascript'
+  Plug 'evanleck/vim-svelte', {'branch': 'main'}
+  Plug 'ziglang/zig.vim'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
