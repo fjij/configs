@@ -1,0 +1,27 @@
+# tools
+brew "bat"
+brew "direnv"
+brew "fzf"
+brew "jq"
+brew "ripgrep"
+brew "tree"
+brew "gawk"
+
+# languages
+brew "deno"
+brew "zig"
+brew "gcc"
+
+# programs
+brew "nethack"
+brew "neovim"
+brew "git"
+brew "tmux"
+brew "tldr"
+brew "pandoc"
+brew "docker-compose"
+
+# misc
+brew "cloudflare/cloudflare/cloudflared"
+brew "gh"
+brew "pinentry-mac"

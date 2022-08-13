@@ -17,19 +17,4 @@ symlink $PWD/git/gitignore $HOME/.gitignore
 symlink $PWD/zsh/zshrc $HOME/.zshrc
 symlink $PWD/zsh/zprofile $HOME/.zprofile
 symlink $PWD/scripts $HOME/scripts
-
-which -s brew
-if [[ $? != 0 ]] ; then
-  read -p "Homebrew is not installed. Install brew (y/n)? " -n 1 -r
-  echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]
-  then
-      [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-  fi
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew bundle
-else
-  brew update
-  brew bundle
-fi
-
+symlink $PWD/homebrew/Brewfile $HOME/Brewfile

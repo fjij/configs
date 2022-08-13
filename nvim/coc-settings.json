@@ -4,5 +4,9 @@
       "enable": false
     }
   },
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "zig.enabled": true,
+  "zig.startUpMessage": true,
+  "zig.path": "~/bin/zls",
+  "zig.debugLog": false
 }
