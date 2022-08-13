@@ -11,6 +11,7 @@ brew "gawk"
 brew "deno"
 brew "zig"
 brew "gcc"
+brew "go"
 
 # programs
 brew "nethack"
@@ -25,3 +26,8 @@ brew "docker-compose"
 brew "cloudflare/cloudflare/cloudflared"
 brew "gh"
 brew "pinentry-mac"
+
+# casks
+cask "alacritty"
+cask "basictex"
+cask "docker"

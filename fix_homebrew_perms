@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# https://gist.github.com/stefanschmidt/047001373d1defc90b6bdd7820e92cf7
+
+sudo chown -vR $(whoami) /usr/local /opt/homebrew-cask /Library/Caches/Homebrew
+chmod -vR ug+rw /usr/local /opt/homebrew-cask /Library/Caches/Homebrew
+find /usr/local /opt/homebrew-cask /Library/Caches/Homebrew -type d -exec chmod -v ug+x {} +
