@@ -5,6 +5,11 @@ end
 set -gx EDITOR nvim
 set -gx CLICOLOR 1
 
+set -gx fish_greeting
+
+nvm use v16 --silent
+fish_config prompt choose arrow
+
 fish_add_path ~/bin
 fish_add_path ~/.radicle/bin
 fish_add_path ~/.yarn/bin
