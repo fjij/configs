@@ -8,5 +8,8 @@
   "zig.enabled": true,
   "zig.startUpMessage": true,
   "zig.path": "~/bin/zls",
-  "zig.debugLog": false
+  "zig.debugLog": false,
+  "cSpell.userWords": [
+    "Dotfiles"
+  ]
 }
