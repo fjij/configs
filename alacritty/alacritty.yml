@@ -1,0 +1,12 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+window:
+  dynamic_title: false
+
+font:
+  normal:
+    family: ComicCodeLigatures Nerd Font
+  size: 18.0
+  offset:
+    x: -2
+    y: -8

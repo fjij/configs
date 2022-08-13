@@ -10,6 +10,7 @@ symlink() {
 # Setup symlinks
 mkdir -p $HOME/.config
 symlink $PWD/nvim $HOME/.config/nvim
+symlink $PWD/alacritty $HOME/.config/alacritty
 symlink $PWD/tmux/tmux.conf $HOME/.tmux.conf
 symlink $PWD/git/gitconfig $HOME/.gitconfig
 symlink $PWD/git/gitignore $HOME/.gitignore
