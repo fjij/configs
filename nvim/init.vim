@@ -54,6 +54,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'evanleck/vim-svelte', {'branch': 'main'}
   Plug 'ziglang/zig.vim'
+  Plug 'khaveesh/vim-fish-syntax'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
