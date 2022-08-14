@@ -6,9 +6,11 @@ set -gx EDITOR nvim
 set -gx CLICOLOR 1
 
 set -gx fish_greeting
+abbr -a e nvim
 
 nvm use v16 --silent
 fish_config prompt choose arrow
+fish_vi_key_bindings
 
 fish_add_path ~/bin
 fish_add_path ~/.radicle/bin
