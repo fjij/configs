@@ -2,6 +2,9 @@
 
 window:
   dynamic_title: false
+  dimensions:
+    columns: 88
+    lines: 28
 
 font:
   normal:
