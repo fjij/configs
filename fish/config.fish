@@ -17,6 +17,7 @@ fish_add_path ~/.radicle/bin
 fish_add_path ~/.yarn/bin
 fish_add_path ~/.yarn/global/node_modules/bin
 fish_add_path ~/.cargo/bin
+fish_add_path ~/bin/google-cloud-sdk/bin
 
 eval $(/opt/homebrew/bin/brew shellenv)
 eval $(direnv hook fish)
