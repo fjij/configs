@@ -6,6 +6,7 @@ brew "jq"
 brew "ripgrep"
 brew "tree"
 brew "gawk"
+brew "git-delta"
 
 # languages
 brew "deno"

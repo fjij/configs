@@ -4,9 +4,11 @@
 [alias]
 	sla = log --graph --all --pretty=format:'%C(yellow)%h%C(reset) %an [%C(green)%ar%C(reset)] %s'
 [core]
-	editor = nvim
+  editor = nvim
+  pager = delta
   excludesfile = ~/.gitignore
 [diff]
+  colorMoved = default
   tool = vimdiff
 [merge]
   tool = vimdiff
@@ -17,3 +19,13 @@
 	branch = false
 [init]
 	defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[add.interactive]
+  useBuiltin = false
+[delta]
+  file-style = omit
+  navigate = true
+  hunk-header-style = file line-number syntax
+  hunk-header-decoration-style = ul
+  hunk-label =
