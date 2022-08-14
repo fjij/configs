@@ -5,6 +5,8 @@ end
 set -gx EDITOR nvim
 set -gx CLICOLOR 1
 
+set -gx GOPATH ~/.go
+
 set -gx fish_greeting
 abbr -a e nvim
 
