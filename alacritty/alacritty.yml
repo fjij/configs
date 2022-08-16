@@ -9,7 +9,7 @@ window:
 font:
   normal:
     family: ComicCodeLigatures Nerd Font
-  size: 18.0
+  size: 15.0
   offset:
     x: -2
     y: -8
