@@ -55,6 +55,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'evanleck/vim-svelte', {'branch': 'main'}
   Plug 'ziglang/zig.vim'
   Plug 'khaveesh/vim-fish-syntax'
+  Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
