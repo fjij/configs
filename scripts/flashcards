@@ -3,9 +3,9 @@ from typing import Dict, List
 from random import shuffle
 from sys import argv
 
-cards: Dict[str, List] = {}
 
 def load_cards(): 
+    cards: Dict[str, List] = {}
     topic = "NONE"
     subtopic = "NONE"
 
@@ -23,15 +23,17 @@ def load_cards():
             cards[subtopic] = []
         elif subtopic != "NONE":
             cards[subtopic].append(line)
+    return cards
 
-def show_card(index: int):
+def show_card(cards, index):
     key = list(cards.keys())[index]
     print(key)
     input()
     for line in cards[key]:
         print(line)
 
+cards = load_cards()
 order = list(range(len(cards)))
 shuffle(order)
 for index in order:
-    show_card(index)
+    show_card(cards, index)
