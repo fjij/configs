@@ -22,11 +22,11 @@ brew "tmux"
 brew "tldr"
 brew "pandoc"
 brew "docker-compose"
+brew "fish"
 
 # misc
 brew "cloudflare/cloudflare/cloudflared"
 brew "gh"
-brew "pinentry-mac"
 
 # casks
 cask "alacritty"
