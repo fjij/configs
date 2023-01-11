@@ -25,7 +25,7 @@ echo $(which fish) | sudo tee -a /etc/shells
 3. Change the default shell
 
 ```sh
-chsh -s $(which fish)
+sudo chsh -s $(which fish)
 ```
 
 ### Tips
