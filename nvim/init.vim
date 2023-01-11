@@ -39,7 +39,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'vim-utils/vim-man'
   Plug 'mbbill/undotree'
   Plug 'elmcast/elm-vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-sensible'
   Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'tpope/vim-surround'

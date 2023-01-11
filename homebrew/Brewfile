@@ -5,8 +5,6 @@ brew "fzf"
 brew "jq"
 brew "ripgrep"
 brew "tree"
-brew "gawk"
-brew "git-delta"
 
 # languages
 brew "deno"
@@ -20,12 +18,9 @@ brew "neovim"
 brew "git"
 brew "tmux"
 brew "tldr"
-brew "pandoc"
-brew "docker-compose"
 brew "fish"
 
 # misc
-brew "cloudflare/cloudflare/cloudflared"
 brew "gh"
 
 # casks

@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-from random import randint
-from os import getenv
-
-with open(getenv('HOME') + '/.cards') as f:
-    lines = [line.rstrip('\n') for line in f]
-    print(lines[randint(0, len(lines) - 1)])

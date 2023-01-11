@@ -7,9 +7,7 @@ window:
     lines: 28
 
 font:
-  normal:
-    family: ComicCodeLigatures Nerd Font
-  size: 17.5
+  size: 20
   offset:
     x: 0
     y: 0
