@@ -1,42 +1,50 @@
-local utils = require("utils")
-
 -- Line Numbers
-utils.set("number", true)
-utils.set("relativenumber", true)
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Columns
-utils.set("textwidth", 80)
-utils.set("colorcolumn", "81")
-utils.set("wrap", 0)
+vim.opt.colorcolumn = "81"
+vim.opt.wrap = false
 
 -- Tabs
-utils.set("tabstop", 2)
-utils.set("softtabstop", 2)
-utils.set("shiftwidth", 2)
-utils.set("autoindent", true)
-utils.set("expandtab", true)
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+vim.opt.expandtab = true
 
 -- Disable Modelines
-utils.set("modelines", 0)
-utils.set("modeline", false)
+vim.opt.modelines = 0
+vim.opt.modeline = false
 
 -- Disable hiden
-utils.set("hidden", false)
+vim.opt.hidden = false
 
 -- Backups
-utils.set("swapfile", false)
-utils.set("backup", false)
--- utils.set("undodir", "~/.vim/undodir")
-utils.set("undofile", true)
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
 -- Sign column
-utils.set("signcolumn", "number")
+vim.opt.signcolumn = "number"
 
 -- Search
-utils.set("incsearch", true)
+vim.opt.incsearch = true
 
 -- Block cursor
-utils.set("guicursor", "")
+vim.opt.guicursor = ""
 
--- Starting in replace mode fix
-utils.set("t_u7", "")
+-- Folding
+function _G.my_fold_text()
+    local a = vim.fn.getline(vim.v.foldstart)
+    local b = vim.fn.getline(vim.v.foldend):gsub("%s+", "")
+    return a .. " ... " .. b
+end
+
+vim.opt.foldmethod = "syntax"
+vim.opt.foldlevelstart = 99
+vim.opt.foldtext = "v:lua.my_fold_text()"
+vim.opt.foldnestmax = 3
+vim.opt.foldminlines = 1
+vim.opt.fillchars = "fold: " 

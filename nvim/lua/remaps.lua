@@ -1,28 +1,26 @@
-local utils = require("utils")
-
-utils.set_var("mapleader", " ")
+vim.g.mapleader = " "
 
 -- Windows
-utils.map("n", "<Leader>h", ":wincmd h<CR>", { silent = true })
-utils.map("n", "<leader>j", ":wincmd j<CR>", { silent = true })
-utils.map("n", "<leader>k", ":wincmd k<CR>", { silent = true })
-utils.map("n", "<leader>l", ":wincmd l<CR>", { silent = true })
-utils.map("n", "<leader>q", ":q<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>h", ":wincmd h<CR>")
+vim.keymap.set("n", "<leader>j", ":wincmd j<CR>")
+vim.keymap.set("n", "<leader>k", ":wincmd k<CR>")
+vim.keymap.set("n", "<leader>l", ":wincmd l<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
 
 -- Tabs
-utils.map("n", "<leader><S-tab>", ":tabprevious<CR>", { silent = true })
-utils.map("n", "<leader><tab>", ":tabnext<CR>", { silent = true })
-utils.map("n", "<leader>t", ":tabnew<CR>", { silent = true })
-utils.map("n", "<leader>1", "1gt", { silent = true })
-utils.map("n", "<leader>2", "2gt", { silent = true })
-utils.map("n", "<leader>3", "3gt", { silent = true })
-utils.map("n", "<leader>4", "4gt", { silent = true })
-utils.map("n", "<leader>5", "5gt", { silent = true })
-utils.map("n", "<leader>6", "6gt", { silent = true })
-utils.map("n", "<leader>7", "7gt", { silent = true })
-utils.map("n", "<leader>8", "8gt", { silent = true })
-utils.map("n", "<leader>9", "9gt", { silent = true })
-utils.map("n", "<leader>0", "10gt", { silent = true })
+vim.keymap.set("n", "<leader><S-tab>", ":tabprevious<CR>")
+vim.keymap.set("n", "<leader><tab>", ":tabnext<CR>")
+vim.keymap.set("n", "<leader>t", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>1", "1gt")
+vim.keymap.set("n", "<leader>2", "2gt")
+vim.keymap.set("n", "<leader>3", "3gt")
+vim.keymap.set("n", "<leader>4", "4gt")
+vim.keymap.set("n", "<leader>5", "5gt")
+vim.keymap.set("n", "<leader>6", "6gt")
+vim.keymap.set("n", "<leader>7", "7gt")
+vim.keymap.set("n", "<leader>8", "8gt")
+vim.keymap.set("n", "<leader>9", "9gt")
+vim.keymap.set("n", "<leader>0", "10gt")
 
 -- Misc
-utils.map("n", "Q", "gq", { silent = true })
+vim.keymap.set("n", "Q", "gq")
