@@ -79,10 +79,4 @@ require("lazy").setup({
         },
         keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
     },
-    {
-        "simrat39/symbols-outline.nvim",
-        cmd = "SymbolsOutline",
-        keys = { { "<leader>so", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-        config = true,
-    },
 })
