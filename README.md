@@ -2,38 +2,28 @@
 
 Dotfiles and script to install programs
 
-## Install Homebrew
+## Install homebrew
 
 ```sh
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## Install Fish
-
-1. Install with homebrew
+## Install programs from Brewfile
 
 ```sh
-brew install fish
+brew bundle install
 ```
 
-2. Add it to the list of valid shells
+## Set fish as default shell
+
+Add fish to the list of valid shells
 
 ```sh
 echo $(which fish) | sudo tee -a /etc/shells
 ```
 
-3. Change the default shell
+Change the default shell
 
 ```sh
 sudo chsh -s $(which fish)
-```
-
-### Tips
-
-- You might need to reboot if it doesn't update right away across all terminals
-
-## Install Alacritty
-
-```sh
-brew install alacritty
 ```

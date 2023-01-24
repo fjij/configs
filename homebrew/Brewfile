@@ -1,29 +1,7 @@
-# tools
-brew "bat"
-brew "direnv"
-brew "fzf"
-brew "jq"
+# core
 brew "ripgrep"
-brew "tree"
-
-# languages
-brew "deno"
-brew "zig"
-brew "gcc"
-brew "go"
-
-# programs
 brew "nethack"
 brew "neovim"
 brew "git"
 brew "tmux"
-brew "tldr"
 brew "fish"
-
-# misc
-brew "gh"
-
-# casks
-cask "alacritty"
-cask "basictex"
-cask "docker"
