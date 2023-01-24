@@ -7,6 +7,8 @@ window:
     lines: 28
 
 font:
+  normal:
+    family: Hack Nerd Font Mono
   size: 20
   offset:
     x: 0

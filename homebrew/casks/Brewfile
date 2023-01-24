@@ -1,2 +1,6 @@
-# casks
+# programs
 cask "alacritty"
+
+# fonts
+tap "homebrew/cask-fonts"
+cask "font-hack-nerd-font"
