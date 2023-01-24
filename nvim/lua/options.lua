@@ -17,8 +17,11 @@ vim.opt.expandtab = true
 vim.opt.modelines = 0
 vim.opt.modeline = false
 
--- Disable hiden
+-- Disable hidden
 vim.opt.hidden = false
+
+-- Disable mouse
+vim.opt.mouse = ""
 
 -- Backups
 vim.opt.swapfile = false
