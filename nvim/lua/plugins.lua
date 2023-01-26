@@ -17,7 +17,6 @@ require("lazy").setup({
     "tpope/vim-sensible",
     "tpope/vim-fugitive",
     "tpope/vim-surround",
-    "tpope/vim-unimpaired",
     {
         'rose-pine/neovim',
         name = 'rose-pine',
