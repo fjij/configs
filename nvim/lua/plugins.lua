@@ -17,6 +17,7 @@ require("lazy").setup({
     "tpope/vim-sensible",
     "tpope/vim-fugitive",
     "tpope/vim-surround",
+    "tpope/vim-unimpaired",
     {
         "rose-pine/neovim",
         name = "rose-pine",
@@ -70,7 +71,7 @@ require("lazy").setup({
         run = ":TSUpdate",
     },
     {
-    "nvim-neo-tree/neo-tree.nvim",
+        "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -78,5 +79,11 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         },
         keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
+    },
+    {
+        "akinsho/bufferline.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        version = "3.x",
+        config = true,
     },
 })
