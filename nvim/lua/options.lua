@@ -38,6 +38,9 @@ vim.opt.incsearch = true
 -- Block cursor
 vim.opt.guicursor = ""
 
+-- Misc
+vim.opt.termguicolors = true
+
 -- Folding
 function _G.my_fold_text()
     local a = vim.fn.getline(vim.v.foldstart)

@@ -19,10 +19,14 @@ require("lazy").setup({
     "tpope/vim-surround",
     "tpope/vim-unimpaired",
     {
-        "rose-pine/neovim",
-        name = "rose-pine",
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        lazy = false,
+        priority = 1000,
         config = function()
-            vim.cmd("colorscheme rose-pine")
+            vim.o.background = "light"
+            require("rose-pine").setup()
+            vim.cmd('colorscheme rose-pine')
         end,
     },
     {
@@ -85,5 +89,6 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         version = "3.x",
         config = true,
+        opts = { options = { separator_style = "slant" } },
     },
 })
