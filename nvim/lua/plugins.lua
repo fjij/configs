@@ -40,6 +40,8 @@ require("lazy").setup({
                     i = {
                         ["<esc>"] = require("telescope.actions").close,
                         ["<CR>"] = function()
+                            -- treesitter fold fix
+                            -- https://github.com/nvim-telescope/telescope.nvim/issues/559#issuecomment-1195895807
                             vim.cmd [[:stopinsert]]
                             vim.cmd [[call feedkeys("\<CR>")]]
                         end,
