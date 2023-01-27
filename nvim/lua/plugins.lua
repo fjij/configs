@@ -35,7 +35,17 @@ require("lazy").setup({
             { "<leader>ps", ":Telescope live_grep<cr>", desc = "Live grep" },
         },
         opts = {
-            defaults = { mappings = { i = { ["<esc>"] = require("telescope.actions").close } } },
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<esc>"] = require("telescope.actions").close,
+                        ["<CR>"] = function()
+                            vim.cmd [[:stopinsert]]
+                            vim.cmd [[call feedkeys("\<CR>")]]
+                        end,
+                    },
+                },
+            },
         },
     },
     {
@@ -71,6 +81,11 @@ require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter").setup()
+            vim.opt.foldmethod = "expr"
+            vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+        end
     },
     {
         "nvim-neo-tree/neo-tree.nvim",

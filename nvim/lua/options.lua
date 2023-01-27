@@ -48,6 +48,7 @@ function _G.my_fold_text()
     return a .. " ... " .. b
 end
 
+vim.opt.foldenable = false
 vim.opt.foldmethod = "syntax"
 vim.opt.foldlevelstart = 99
 vim.opt.foldtext = "v:lua.my_fold_text()"
