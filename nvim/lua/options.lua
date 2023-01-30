@@ -36,6 +36,8 @@ opt.signcolumn = "number"
 
 -- Search
 opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
 
 -- Block cursor
 opt.guicursor = ""
