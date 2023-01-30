@@ -32,7 +32,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
 -- Sign column
-opt.signcolumn = "number"
+opt.signcolumn = "yes:1"
 
 -- Search
 opt.incsearch = true
