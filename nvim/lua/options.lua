@@ -45,6 +45,9 @@ opt.guicursor = ""
 -- Misc
 opt.termguicolors = true
 
+-- Tabpages
+opt.showtabline = 2
+
 -- Splits
 opt.splitright = true
 opt.splitbelow = true

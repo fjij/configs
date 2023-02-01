@@ -99,11 +99,5 @@ require("lazy").setup({
         },
         keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
     },
-    {
-        "akinsho/bufferline.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        version = "3.x",
-        config = true,
-        opts = { options = { separator_style = "slant" } },
-    },
+    "nanozuki/tabby.nvim",
 })
