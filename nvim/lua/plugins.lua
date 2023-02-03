@@ -99,5 +99,4 @@ require("lazy").setup({
         },
         keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
     },
-    "nanozuki/tabby.nvim",
 })
