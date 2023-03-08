@@ -22,8 +22,8 @@ Add fish to the list of valid shells
 echo $(which fish) | sudo tee -a /etc/shells
 ```
 
-Change the default shell
+Change the default shell (you might need to sudo)
 
 ```sh
-sudo chsh -s $(which fish)
+chsh -s $(which fish)
 ```
