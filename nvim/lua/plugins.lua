@@ -17,6 +17,7 @@ require("lazy").setup({
     "tpope/vim-sensible",
     "tpope/vim-fugitive",
     "tpope/vim-surround",
+    "dag/vim-fish",
     {
         'rose-pine/neovim',
         name = 'rose-pine',
@@ -75,6 +76,14 @@ require("lazy").setup({
             lsp.set_preferences({
                 set_lsp_keymaps = true,
                 manage_nvim_cmp = true,
+            })
+
+            lsp.configure('pyright', {
+                settings = {
+                    python = {
+                        -- pythonPath = os.getenv("HOME") .. "/av/tools/python",
+                    }
+                }
             })
 
             lsp.setup()

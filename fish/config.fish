@@ -14,8 +14,6 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
-fish_config prompt choose informative_vcs
-
 # Git
 abbr gs git status
 abbr gd git diff
