@@ -81,7 +81,7 @@ require("lazy").setup({
             lsp.configure('pyright', {
                 settings = {
                     python = {
-                        -- pythonPath = os.getenv("HOME") .. "/av/tools/python",
+                        -- pythonPath = os.getenv("PYTHON_PATH"),
                     }
                 }
             })
