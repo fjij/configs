@@ -1,7 +1,13 @@
 # core
 brew "ripgrep"
-brew "nethack"
 brew "neovim"
 brew "git"
 brew "tmux"
 brew "fish"
+
+# glitter
+brew "bat"
+brew "fzf"
+
+# gamer
+brew "nethack"
