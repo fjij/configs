@@ -15,20 +15,35 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
 end
 
 # Git
-abbr gs git status
+abbr g git status
+abbr gl git log
 abbr gd git diff
 abbr gds git diff --staged
-abbr gb git branch
 abbr ga git add
 abbr gc git commit
-abbr gco git checkout
+abbr gr git restore
 abbr gp git push
 abbr gpu git push -u origin HEAD
-abbr gr git restore
-abbr gl git log
 abbr gpull git pull
+abbr gb git branch
+function git_branch_choose_interactive
+    git for-each-ref --format='%(refname:short)' refs/heads/ | fzf  --height=~20 --reverse
+end
+abbr gbd git branch --delete
+function git_branch_delete_interactive
+    echo "Delete branch:" && git_branch_choose_interactive | xargs git branch --delete
+end
+abbr gbdi git_branch_delete_interactive
+abbr gs git switch
+function git_switch_interactive
+    echo "Switch branch:" && git_branch_choose_interactive | xargs git switch
+end
+abbr gsi git_switch_interactive
+abbr gsc git switch --create
+abbr gco git checkout
 
 # misc
+abbr x exit
 abbr cls clear
 abbr issues gh issue list -a @me
 abbr pr gh pr
