@@ -17,10 +17,13 @@ require("lazy").setup({
     "tpope/vim-sensible",
     "tpope/vim-fugitive",
     "tpope/vim-surround",
-    "dag/vim-fish",
     {
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        "dag/vim-fish",
+        ft = "fish",
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
         lazy = false,
         priority = 1000,
         config = function()
@@ -78,7 +81,7 @@ require("lazy").setup({
                 manage_nvim_cmp = true,
             })
 
-            lsp.configure('pyright', {
+            lsp.configure("pyright", {
                 settings = {
                     python = {
                         -- pythonPath = os.getenv("PYTHON_PATH"),
