@@ -15,6 +15,4 @@ symlink $PWD/tmux/tmux.conf $HOME/.tmux.conf
 symlink $PWD/git/gitconfig $HOME/.gitconfig
 symlink $PWD/git/gitignore $HOME/.gitignore
 symlink $PWD/scripts $HOME/scripts
-symlink $PWD/fish/config.fish $HOME/.config/fish/config.fish
-symlink $PWD/fish/config.fish $HOME/.config/fish/config.fish
-symlink $PWD/fish/fish_plugins $HOME/.config/fish/fish_plugins
+symlink $PWD/fish $HOME/.config/fish

@@ -8,8 +8,8 @@ window:
 
 font:
   normal:
-    family: ComicCodeLigatures Nerd Font
-  size: 17.5
+    family: Hack Nerd Font Mono
+  size: 20
   offset:
     x: 0
     y: 0
