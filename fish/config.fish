@@ -30,16 +30,14 @@ abbr gb git branch
 function git_branch_choose_interactive
     git for-each-ref --format='%(refname:short)' refs/heads/ | fzf  --height=~20 --reverse
 end
-abbr gbd git branch --delete
 function git_branch_delete_interactive
-    echo "Delete branch:" && git_branch_choose_interactive | xargs git branch --delete
+    echo git branch --delete (git_branch_choose_interactive)
 end
-abbr gbdi git_branch_delete_interactive
-abbr gs git switch
+abbr gbd -f git_branch_delete_interactive
 function git_switch_interactive
-    echo "Switch branch:" && git_branch_choose_interactive | xargs git switch
+    echo git switch (git_branch_choose_interactive)
 end
-abbr gsi git_switch_interactive
+abbr gs -f git_switch_interactive
 abbr gsc git switch --create
 abbr gco git checkout
 
