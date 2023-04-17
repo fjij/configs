@@ -17,6 +17,7 @@ require("lazy").setup({
     "tpope/vim-sensible",
     "tpope/vim-fugitive",
     "tpope/vim-surround",
+    "itchyny/vim-qfedit",
     {
         "dag/vim-fish",
         ft = "fish",
@@ -27,7 +28,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            require("rose-pine").setup({ dark_variant = "moon" })
+            require("rose-pine").setup({ dark_variant = "main" })
             vim.cmd('colorscheme rose-pine')
         end,
     },
@@ -42,7 +43,7 @@ require("lazy").setup({
             defaults = {
                 mappings = {
                     i = {
-                        ["<esc>"] = require("telescope.actions").close,
+                        -- ["<esc>"] = require("telescope.actions").close,
                         ["<CR>"] = function()
                             -- treesitter fold fix
                             -- https://github.com/nvim-telescope/telescope.nvim/issues/559#issuecomment-1195895807
@@ -60,36 +61,24 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-
             "hrsh7th/nvim-cmp",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
-            "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-nvim-lua",
-
-            "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets",
         },
 
         config = function()
             local lsp = require("lsp-zero")
             lsp.preset("recommended")
-
-            lsp.set_preferences({
-                set_lsp_keymaps = true,
-                manage_nvim_cmp = true,
-            })
-
-            lsp.configure("pyright", {
-                settings = {
-                    python = {
-                        -- pythonPath = os.getenv("PYTHON_PATH"),
-                    }
-                }
-            })
-
             lsp.setup()
+
+            local cmp = require("cmp")
+            cmp.setup({
+                mapping = {
+                    ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+                },
+            })
         end,
     },
     {
