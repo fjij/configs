@@ -41,6 +41,17 @@ abbr gs -f git_switch_interactive
 abbr gsc git switch --create
 abbr gco git checkout
 
+# Github
+function gh_clean
+    set closed_branches (gh pr list --author=@me --state=closed --json='headRefName' | jq -r '.[] | .headRefName')
+    for branch in $closed_branches
+        # check if branch exists
+        if git rev-parse --verify $branch 2&>/dev/null
+            git branch --delete $branch
+        end
+    end
+end
+
 # misc
 abbr x exit
 abbr cls clear
