@@ -1,6 +1,6 @@
 # programs
 cask "alacritty"
+cask "1password/tap/1password-cli"
 
 # fonts
-tap "homebrew/cask-fonts"
-cask "font-hack-nerd-font"
+cask "homebrew/cask-fonts/font-hack-nerd-font"
