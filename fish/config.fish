@@ -15,6 +15,10 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
+if op --version >> /dev/null
+    source /Users/will/.config/op/plugins.sh
+end
+
 # Git
 abbr g git status
 abbr gl git log
