@@ -45,3 +45,9 @@ cd ./homebrew/casks/
 brew bundle install
 cd ../..
 ```
+
+## 6. (Optional) Sign in to 1password CLI
+
+You can use a service account token using `./fish/local_config.fish`.
+
+Read the documentation for more.
