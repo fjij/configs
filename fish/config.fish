@@ -15,8 +15,8 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
-if op --version >> /dev/null
-    source /Users/will/.config/op/plugins.sh
+if op --version >> /dev/null; and test -e ~/.config/op/plugins.sh
+    source ~/.config/op/plugins.sh
 end
 
 # Git
