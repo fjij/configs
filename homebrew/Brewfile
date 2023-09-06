@@ -8,6 +8,7 @@ brew "fish"
 # glitter
 brew "bat"
 brew "fzf"
+brew "gum"
 
 # gamer
 brew "nethack"
