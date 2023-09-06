@@ -4,11 +4,12 @@ brew "neovim"
 brew "git"
 brew "tmux"
 brew "fish"
+brew "jq"
 
 # glitter
 brew "bat"
-brew "fzf"
 brew "gum"
+brew "gh"
 
 # gamer
 brew "nethack"
