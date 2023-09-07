@@ -8,8 +8,8 @@ window:
 
 font:
   normal:
-    family: Hack Nerd Font Mono
+    family: Codelia Nerd Font
   size: 20
   offset:
     x: 0
-    y: 0
+    y: -6
