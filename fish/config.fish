@@ -7,6 +7,8 @@ set -gx MANPAGER 'sh -c \'col -bx | bat -l man -p\''
 set -gx fish_greeting
 fish_config prompt choose arrow
 fish_add_path ~/bin
+
+# Homebrew
 if test -e /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
 end
@@ -14,7 +16,8 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
 
-if op --version >> /dev/null; and test -e ~/.config/op/plugins.sh
+# 1Password CLI
+if type -q op; and test -e ~/.config/op/plugins.sh
     source ~/.config/op/plugins.sh
 end
 
@@ -44,9 +47,11 @@ abbr gs -f git_switch_interactive
 abbr gsc git switch --create
 abbr gco git checkout
 
-# misc
+# Misc abbreviations
 abbr x exit
 abbr cls clear
+
+# Github
 abbr issues gh issue list -a @me
 abbr pr gh pr
 function current_issue
@@ -54,7 +59,7 @@ function current_issue
 end
 abbr ISSUE --position=anywhere -f current_issue
 
-# other
+# Local config
 if test -e ~/.config/fish/local_config.fish
     source ~/.config/fish/local_config.fish
 end

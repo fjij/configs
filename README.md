@@ -14,6 +14,9 @@ Dotfiles and script to install programs
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+You may need to run one of the outputted commands to temporarily add brew to
+your path.
+
 ## 3. Install programs from Brewfile
 
 ```sh
@@ -30,10 +33,16 @@ Add fish to the list of valid shells
 echo $(which fish) | sudo tee -a /etc/shells
 ```
 
-Change the default shell (you might need to sudo)
+Change the default shell
 
 ```sh
 chsh -s $(which fish)
+```
+
+Alternatively
+
+```sh
+sudo chsh -s $(which fish) $(whoami)
 ```
 
 You might need to reboot after this one.
