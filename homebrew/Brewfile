@@ -10,6 +10,8 @@ brew "jq"
 brew "bat"
 brew "gum"
 brew "gh"
+brew "tldr"
+# brew "pandoc"
 
 # gamer
 brew "nethack"
