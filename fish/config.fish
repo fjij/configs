@@ -46,6 +46,7 @@ end
 abbr gs -f git_switch_interactive
 abbr gsc git switch --create
 abbr gco git checkout
+abbr guncommit git reset HEAD~
 
 # Misc abbreviations
 abbr x exit
