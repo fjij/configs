@@ -23,13 +23,13 @@ require("lazy").setup({
         ft = "fish",
     },
     {
-        "rose-pine/neovim",
-        name = "rose-pine",
+        "rebelot/kanagawa.nvim",
+        name = "kanagawa",
         lazy = false,
         priority = 1000,
         config = function()
-            require("rose-pine").setup({ dark_variant = "main" })
-            vim.cmd('colorscheme rose-pine')
+            require("kanagawa").setup()
+            vim.cmd('colorscheme kanagawa')
         end,
     },
     {
@@ -100,4 +100,19 @@ require("lazy").setup({
         },
         keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
     },
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = {
+          "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+          require('lualine').setup({
+              options = {
+                  icons_enabled = false,
+                  component_separators = { left = '', right = ''},
+                  section_separators = { left = '', right = ''},
+              }
+          })
+      end
+  }
 })

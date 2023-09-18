@@ -52,6 +52,9 @@ opt.showtabline = 2
 opt.splitright = true
 opt.splitbelow = true
 
+-- Hide command line
+opt.cmdheight = 0
+
 -- Folding
 function _G.my_fold_text()
     local a = vim.fn.getline(vim.v.foldstart)
