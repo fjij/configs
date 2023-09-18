@@ -66,3 +66,6 @@ opt.foldtext = "v:lua.my_fold_text()"
 opt.foldnestmax = 3
 opt.foldminlines = 1
 opt.fillchars = "fold: "
+
+-- Disable inline LSP warnings
+vim.diagnostic.config({virtual_text = false})
