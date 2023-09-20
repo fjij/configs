@@ -1,6 +1,7 @@
 # programs
 cask "alacritty"
 cask "1password/tap/1password-cli"
+cask "unnaturalscrollwheels"
 
 # fonts
 cask "homebrew/cask-fonts/font-hack-nerd-font"

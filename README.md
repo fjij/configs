@@ -20,9 +20,7 @@ your path.
 ## 3. Install programs from Brewfile
 
 ```sh
-cd ./homebrew/
-brew bundle install
-cd ..
+brew bundle install --file ./homebrew/Brewfile
 ```
 
 ## 4. Set fish as default shell
@@ -50,9 +48,7 @@ You might need to reboot after this one.
 ## 5. (Optional) Install casks
 
 ```sh
-cd ./homebrew/casks/
-brew bundle install
-cd ../..
+brew bundle install --file ./homebrew/casks/Brewfile
 ```
 
 ## 6. (Optional) Sign in to 1password CLI
