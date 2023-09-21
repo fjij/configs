@@ -1,12 +1,39 @@
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+local opt = vim.opt
+
 -- Show command line when recording macros
-vim.api.nvim_create_autocmd({"RecordingEnter"}, {
+autocmd({"RecordingEnter"}, {
     callback = function()
-        vim.opt.cmdheight = 1
+        opt.cmdheight = 1
     end
 })
 
-vim.api.nvim_create_autocmd({"RecordingLeave"}, {
+autocmd({"RecordingLeave"}, {
     callback = function()
-        vim.opt.cmdheight = 0
+        opt.cmdheight = 0
     end
+})
+
+
+-- Set tabs for different FileTypes
+local function set_indent_size(n)
+    return function()
+        opt.tabstop = n
+        opt.softtabstop = n
+        opt.shiftwidth = n
+    end
+end
+
+
+augroup('indent_size', {})
+autocmd('FileType', {
+    group = 'indent_size',
+    pattern = {'python', 'c', 'cpp', 'rust'},
+    callback = set_indent_size(4),
+})
+autocmd('FileType', {
+    group = 'indent_size',
+    pattern = {'javascript', 'typescript', 'markdown', 'lua', 'json'},
+    callback = set_indent_size(2),
 })
