@@ -29,8 +29,8 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-        require("kanagawa").setup()
-        vim.cmd('colorscheme kanagawa')
+      require("kanagawa").setup()
+      vim.cmd("colorscheme kanagawa")
     end,
   },
   {
@@ -48,8 +48,8 @@ require("lazy").setup({
             ["<CR>"] = function()
               -- treesitter fold fix
               -- https://github.com/nvim-telescope/telescope.nvim/issues/559#issuecomment-1195895807
-              vim.cmd [[:stopinsert]]
-              vim.cmd [[call feedkeys("\<CR>")]]
+              vim.cmd([[:stopinsert]])
+              vim.cmd([[call feedkeys("\<CR>")]])
             end,
           },
         },
@@ -88,7 +88,7 @@ require("lazy").setup({
       require("nvim-treesitter").setup()
       vim.opt.foldmethod = "expr"
       vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    end
+    end,
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -109,10 +109,10 @@ require("lazy").setup({
       require("lualine").setup({
         options = {
           icons_enabled = false,
-          component_separators = { left = '', right = ''},
-          section_separators = { left = '', right = ''},
-        }
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
+        },
       })
-    end
+    end,
   },
 })

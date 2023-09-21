@@ -71,4 +71,4 @@ opt.foldminlines = 1
 opt.fillchars = "fold: "
 
 -- Disable inline LSP warnings
-vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({ virtual_text = false })
