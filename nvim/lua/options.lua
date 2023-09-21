@@ -57,9 +57,9 @@ opt.cmdheight = 0
 
 -- Folding
 function _G.my_fold_text()
-    local a = vim.fn.getline(vim.v.foldstart)
-    local b = vim.fn.getline(vim.v.foldend):gsub("^%s*(.-)%s*$", "%1")
-    return a .. " ... " .. b
+  local a = vim.fn.getline(vim.v.foldstart)
+  local b = vim.fn.getline(vim.v.foldend):gsub("^%s*(.-)%s*$", "%1")
+  return a .. " ... " .. b
 end
 
 opt.foldenable = false
