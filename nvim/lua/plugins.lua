@@ -114,5 +114,6 @@ require("lazy").setup({
               }
           })
       end
-  }
+    },
+    'Bekaboo/deadcolumn.nvim'
 })
