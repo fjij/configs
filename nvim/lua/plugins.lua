@@ -18,6 +18,7 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
+  "tpope/vim-repeat",
   "itchyny/vim-qfedit",
   "Bekaboo/deadcolumn.nvim",
   {
