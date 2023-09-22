@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   "tpope/vim-sensible",
   "tpope/vim-fugitive",
+  "tpope/vim-rhubarb",
   "tpope/vim-surround",
   "itchyny/vim-qfedit",
   "Bekaboo/deadcolumn.nvim",
@@ -107,11 +108,6 @@ require("lazy").setup({
     },
     config = function()
       require("lualine").setup({
-        options = {
-          icons_enabled = false,
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
-        },
         sections = {
           lualine_c = { {
             "filename",
