@@ -2,6 +2,7 @@
 
 window:
   dynamic_title: false
+  dynamic_padding: true
   dimensions:
     columns: 88
     lines: 28
