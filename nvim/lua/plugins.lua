@@ -107,14 +107,33 @@ require("lazy").setup({
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    opts = {
+      sections = {
+        lualine_c = { { "filename", path = 1 } },
+      },
+      inactive_sections = {
+        lualine_c = { { "filename", path = 1 } },
+      },
+      tabline = {
+        lualine_a = { { "tabs", mode = 2 } },
+      },
+    },
+  },
+  {
+    "b0o/incline.nvim",
     config = function()
-      require("lualine").setup({
-        sections = {
-          lualine_c = { {
-            "filename",
-            path = 1,
-          } },
-        },
+      require("incline").setup({
+        render = function(props)
+          local helpers = require("helpers")
+          local result = helpers.shorten_path_styled(vim.api.nvim_buf_get_name(props.buf), {
+            short_len = 1,
+            tail_count = 2,
+            head_max = 4,
+            head_style = { group = "Comment" },
+            tail_style = {},
+          })
+          return result
+        end,
       })
     end,
   },

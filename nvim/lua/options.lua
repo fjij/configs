@@ -72,3 +72,6 @@ opt.fillchars = "fold: "
 
 -- Disable inline LSP warnings
 vim.diagnostic.config({ virtual_text = false })
+
+-- One shared status line
+opt.laststatus = 3
