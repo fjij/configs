@@ -109,10 +109,7 @@ require("lazy").setup({
     },
     opts = {
       sections = {
-        lualine_c = { { "filename", path = 1 } },
-      },
-      inactive_sections = {
-        lualine_c = { { "filename", path = 1 } },
+        lualine_x = { "filetype" }
       },
       tabline = {
         lualine_a = { { "tabs", mode = 2 } },
@@ -124,15 +121,14 @@ require("lazy").setup({
     config = function()
       require("incline").setup({
         render = function(props)
+          local path = vim.api.nvim_buf_get_name(props.buf)
           local helpers = require("helpers")
-          local result = helpers.shorten_path_styled(vim.api.nvim_buf_get_name(props.buf), {
+          return helpers.shorten_path_styled(path, {
             short_len = 1,
             tail_count = 2,
             head_max = 4,
             head_style = { group = "Comment" },
-            tail_style = {},
           })
-          return result
         end,
       })
     end,
