@@ -26,6 +26,13 @@ require("lazy").setup({
     ft = "fish",
   },
   {
+    "lifepillar/pgsql.vim",
+    ft = "sql",
+    config = function()
+      vim.g.sql_type_default = "pgsql"
+    end,
+  },
+  {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
     lazy = false,

@@ -16,7 +16,7 @@ autocmd({ "RecordingLeave" }, {
 })
 
 -- Set indent size by FileType
-local function set_indent_size(n)
+local function use_spaces(n)
   return function()
     opt.tabstop = n
     opt.softtabstop = n
@@ -24,16 +24,31 @@ local function set_indent_size(n)
   end
 end
 
-augroup("indent_size", {})
+local function use_tabs(n)
+  return function()
+    opt.autoindent = true
+    opt.expandtab = false
+    opt.tabstop = n
+    opt.shiftwidth = n
+  end
+end
+
+augroup("spacing", {})
 
 autocmd("FileType", {
-  group = "indent_size",
+  group = "spacing",
   pattern = { "python", "c", "cpp", "rust" },
-  callback = set_indent_size(4),
+  callback = use_spaces(4),
 })
 
 autocmd("FileType", {
-  group = "indent_size",
-  pattern = { "javascript", "typescript", "markdown", "lua", "json" },
-  callback = set_indent_size(2),
+  group = "spacing",
+  pattern = { "javascript", "typescript", "markdown", "lua", "json", "yaml" },
+  callback = use_spaces(2),
+})
+
+autocmd("FileType", {
+  group = "spacing",
+  pattern = { "go", "make" },
+  callback = use_tabs(4),
 })
