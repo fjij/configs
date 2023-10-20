@@ -11,7 +11,6 @@ brew "bat"
 brew "gum"
 brew "gh"
 brew "tldr"
-brew "autossh"
 # brew "pandoc"
 
 # gamer
