@@ -119,7 +119,7 @@ require("lazy").setup({
         lualine_x = { "filetype" }
       },
       tabline = {
-        lualine_a = { { "tabs", mode = 2 } },
+        lualine_a = { { "tabs", mode = 2, max_length=function() return vim.o.columns end } },
       },
     },
   },
