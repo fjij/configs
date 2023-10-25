@@ -76,6 +76,8 @@ require("lazy").setup({
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
+      "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function()
       local lsp = require("lsp-zero")
