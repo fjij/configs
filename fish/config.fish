@@ -29,6 +29,7 @@ abbr gds git diff --staged
 abbr ga git add
 abbr gc git commit
 abbr gr git restore
+abbr grs git restore --staged
 abbr gp git push
 abbr gpu git push -u origin HEAD
 abbr gpull git pull
