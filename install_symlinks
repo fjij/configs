@@ -16,3 +16,4 @@ symlink $PWD/git/gitconfig $HOME/.gitconfig
 symlink $PWD/git/gitignore $HOME/.gitignore
 symlink $PWD/scripts $HOME/scripts
 symlink $PWD/fish $HOME/.config/fish
+symlink $PWD/ssh/rc $HOME/.ssh/rc
