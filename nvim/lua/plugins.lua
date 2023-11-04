@@ -46,32 +46,30 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<C-p>", ":Telescope find_files<cr>", desc = "Find files" },
-      { "<leader>ps", ":Telescope live_grep<cr>", desc = "Live grep" },
+      { "<C-p>",      ":Telescope find_files<cr>", desc = "Find files" },
+      { "<leader>ps", ":Telescope live_grep<cr>",  desc = "Live grep" },
     },
-    opts = {
-      defaults = {
-        mappings = {
-          i = {
-            -- ["<esc>"] = require("telescope.actions").close,
-            ["<CR>"] = function()
-              -- treesitter fold fix
-              -- https://github.com/nvim-telescope/telescope.nvim/issues/559#issuecomment-1195895807
-              vim.cmd([[:stopinsert]])
-              vim.cmd([[call feedkeys("\<CR>")]])
-            end,
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          mappings = {
+            i = {
+              ["<esc>"] = require("telescope.actions").close,
+              ["<CR>"] = function()
+                -- treesitter fold fix
+                -- https://github.com/nvim-telescope/telescope.nvim/issues/559#issuecomment-1195895807
+                vim.cmd([[:stopinsert]])
+                vim.cmd([[call feedkeys("\<CR>")]])
+              end,
+            },
           },
         },
-      },
-    },
+      })
+    end
   },
   {
-    "VonHeikemen/lsp-zero.nvim",
+    "hrsh7th/nvim-cmp",
     dependencies = {
-      "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -80,15 +78,62 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
     },
     config = function()
-      local lsp = require("lsp-zero")
-      lsp.preset("recommended")
-      lsp.setup()
-
       local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      require('luasnip.loaders.from_vscode').lazy_load()
+      luasnip.config.setup()
+      ---@diagnostic disable-next-line: missing-fields
       cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'buffer' },
+          { name = 'path' },
+          { name = 'path' },
+        },
         mapping = {
           ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+          ["<Up>"] = cmp.mapping.select_prev_item(),
+          ["<Down>"] = cmp.mapping.select_next_item(),
         },
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
+      { 'j-hui/fidget.nvim',                tag = 'legacy', config = true },
+      { 'folke/neodev.nvim',                config = true },
+    },
+    config = function()
+      require('mason').setup()
+      require('mason-lspconfig').setup({
+        ensure_installed = {
+          'rust_analyzer',
+          lua_ls = {
+            Lua = {
+              workspace = { checkThirdParty = false },
+              telemetry = { enable = false },
+            },
+          },
+        },
+      })
+
+      local lspconfig = require('lspconfig')
+      local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      require('mason-lspconfig').setup_handlers({
+        function(server_name)
+          lspconfig[server_name].setup({
+            capabilities = lsp_capabilities,
+          })
+        end,
       })
     end,
   },
@@ -121,7 +166,7 @@ require("lazy").setup({
         lualine_x = { "filetype" }
       },
       tabline = {
-        lualine_a = { { "tabs", mode = 2, max_length=function() return vim.o.columns end } },
+        lualine_a = { { "tabs", mode = 2, max_length = function() return vim.o.columns end } },
       },
     },
   },
