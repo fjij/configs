@@ -70,6 +70,5 @@ end
 
 # WSL config
 if test -e /etc/wsl.conf
-    # Powershell
-    fish_add_path /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+    source ~/.config/fish/wsl_config.fish
 end
