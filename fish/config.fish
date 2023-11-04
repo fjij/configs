@@ -1,7 +1,6 @@
 if status --is-interactive
   fish_add_path ~/scripts
 end
-set -gx EDITOR nvim
 set -gx CLICOLOR 1
 set -gx MANPAGER 'sh -c \'col -bx | bat -l man -p\''
 set -gx fish_greeting
@@ -15,6 +14,9 @@ end
 if test -e /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 end
+
+# Editor
+set -gx EDITOR $(which nvim)
 
 # 1Password CLI
 if type -q op; and test -e ~/.config/op/plugins.sh
@@ -64,4 +66,10 @@ abbr ISSUE --position=anywhere -f current_issue
 # Local config
 if test -e ~/.config/fish/local_config.fish
     source ~/.config/fish/local_config.fish
+end
+
+# WSL config
+if test -e /etc/wsl.conf
+    # Powershell
+    fish_add_path /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
 end
