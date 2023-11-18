@@ -56,3 +56,13 @@ brew bundle install --file ./homebrew/casks/Brewfile
 You can use a service account token using `./fish/local_config.fish`.
 
 Read the documentation for more.
+
+## 7. (MacOS Only) Disable font smoothing
+
+If fonts look jagged on external monitors, you can run this to disable font
+smoothing. Hopefully it looks better.
+
+```sh
+defaults -currentHost write -g AppleFontSmoothing -int 0
+sudo reboot
+```
