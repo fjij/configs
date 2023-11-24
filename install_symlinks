@@ -1,33 +1,27 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
+# symlink <original> <link>
 symlink() {
-  TARGET=$(readlink $2)
-  if [ "$TARGET" != "$1" ]; then
-    ln -sn $1 $2
+  OG=$(readlink -f $1)
+  if [ "$OG" != "$(readlink -f $2)" ]; then
+    ln -snT $OG $2
   fi
 }
 
+DIRNAME="$( dirname -- "${BASH_SOURCE[0]}" )"
+pushd $DIRNAME > /dev/null
+
 # Setup symlinks
 mkdir -p $HOME/.config
-symlink $PWD/nvim $HOME/.config/nvim
-symlink $PWD/tmux/tmux.conf $HOME/.tmux.conf
-symlink $PWD/git/gitconfig $HOME/.gitconfig
-symlink $PWD/git/gitignore $HOME/.gitignore
-symlink $PWD/scripts $HOME/scripts
-symlink $PWD/fish $HOME/.config/fish
-symlink $PWD/ssh/rc $HOME/.ssh/rc
+symlink ./nvim $HOME/.config/nvim
+symlink ./tmux/tmux.conf $HOME/.tmux.conf
+symlink ./git/gitconfig $HOME/.gitconfig
+symlink ./git/gitignore $HOME/.gitignore
+symlink ./scripts $HOME/scripts
+symlink ./fish $HOME/.config/fish
+symlink ./ssh/rc $HOME/.ssh/rc
+symlink ./alacritty $HOME/.config/alacritty
 
-if [ -f "/etc/wsl.conf" ]; then
-  # WSL Specific
-  POWERSHELL=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
-  WINUSER=$($POWERSHELL '$env:UserName' | tr -d '\r\n') # Trim gross '\r\n's
-  WINHOME=/mnt/c/Users/$WINUSER
-  ALACRITTY=$WINHOME/AppData/Roaming/alacritty
-  rm -rf $ALACRITTY
-  # You'll need to manually re-run this, since we can't symlink to windows
-  cp -r $PWD/alacritty $ALACRITTY
-else
-  symlink $PWD/alacritty $HOME/.config/alacritty
-fi
+popd > /dev/null
