@@ -22,6 +22,10 @@ require("lazy").setup({
   "itchyny/vim-qfedit",
   "Bekaboo/deadcolumn.nvim",
   {
+    "hashivim/vim-terraform",
+    ft = "terraform",
+  },
+  {
     "dag/vim-fish",
     ft = "fish",
   },
