@@ -22,6 +22,10 @@ require("lazy").setup({
   "itchyny/vim-qfedit",
   "Bekaboo/deadcolumn.nvim",
   {
+    "simrat39/symbols-outline.nvim",
+    config = true,
+  },
+  {
     "hashivim/vim-terraform",
     ft = "terraform",
   },
@@ -50,8 +54,8 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<C-p>",      ":Telescope find_files<cr>", desc = "Find files" },
-      { "<leader>ps", ":Telescope live_grep<cr>",  desc = "Live grep" },
+      { "<C-p>", ":Telescope find_files<cr>", desc = "Find files" },
+      { "<leader>ps", ":Telescope live_grep<cr>", desc = "Live grep" },
     },
     config = function()
       require("telescope").setup({
@@ -69,7 +73,7 @@ require("lazy").setup({
           },
         },
       })
-    end
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -84,7 +88,7 @@ require("lazy").setup({
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
-      require('luasnip.loaders.from_vscode').lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load()
       luasnip.config.setup()
       ---@diagnostic disable-next-line: missing-fields
       cmp.setup({
@@ -94,10 +98,10 @@ require("lazy").setup({
           end,
         },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'buffer' },
-          { name = 'path' },
-          { name = 'path' },
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "path" },
+          { name = "path" },
         },
         mapping = {
           ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
@@ -112,14 +116,14 @@ require("lazy").setup({
     dependencies = {
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
-      { 'j-hui/fidget.nvim',                tag = 'legacy', config = true },
-      { 'folke/neodev.nvim',                config = true },
+      { "j-hui/fidget.nvim", tag = "legacy", config = true },
+      { "folke/neodev.nvim", config = true },
     },
     config = function()
-      require('mason').setup()
-      require('mason-lspconfig').setup({
+      require("mason").setup()
+      require("mason-lspconfig").setup({
         ensure_installed = {
-          'rust_analyzer',
+          "rust_analyzer",
           lua_ls = {
             Lua = {
               workspace = { checkThirdParty = false },
@@ -129,10 +133,10 @@ require("lazy").setup({
         },
       })
 
-      local lspconfig = require('lspconfig')
-      local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local lspconfig = require("lspconfig")
+      local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      require('mason-lspconfig').setup_handlers({
+      require("mason-lspconfig").setup_handlers({
         function(server_name)
           lspconfig[server_name].setup({
             capabilities = lsp_capabilities,
@@ -167,10 +171,16 @@ require("lazy").setup({
     },
     opts = {
       sections = {
-        lualine_x = { "filetype" }
+        lualine_x = { "filetype" },
       },
       tabline = {
-        lualine_a = { { "tabs", mode = 2, max_length = function() return vim.o.columns end } },
+        lualine_a = { {
+          "tabs",
+          mode = 2,
+          max_length = function()
+            return vim.o.columns
+          end,
+        } },
       },
     },
   },
