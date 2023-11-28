@@ -39,7 +39,7 @@ return {
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },
-          { name = "path" },
+          { name = "luasnip" },
         },
         mapping = {
           ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
