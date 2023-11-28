@@ -14,41 +14,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- General-purpose plugins
   "tpope/vim-sensible",
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
   "tpope/vim-repeat",
   "itchyny/vim-qfedit",
-  "Bekaboo/deadcolumn.nvim",
   {
     "simrat39/symbols-outline.nvim",
     config = true,
-  },
-  {
-    "hashivim/vim-terraform",
-    ft = "terraform",
-  },
-  {
-    "dag/vim-fish",
-    ft = "fish",
-  },
-  {
-    "lifepillar/pgsql.vim",
-    ft = "sql",
-    config = function()
-      vim.g.sql_type_default = "pgsql"
-    end,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("kanagawa").setup()
-      vim.cmd("colorscheme kanagawa")
-    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -75,6 +50,84 @@ require("lazy").setup({
       })
     end,
   },
+  -- UI Plugins
+  "Bekaboo/deadcolumn.nvim",
+  {
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("kanagawa").setup()
+      vim.cmd("colorscheme kanagawa")
+    end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      sections = {
+        lualine_x = { "filetype" },
+      },
+      tabline = {
+        lualine_a = {
+          {
+            "tabs",
+            mode = 2,
+            max_length = function()
+              return vim.o.columns
+            end,
+          },
+        },
+      },
+    },
+  },
+  {
+    "b0o/incline.nvim",
+    config = function()
+      require("incline").setup({
+        render = function(props)
+          local path = vim.api.nvim_buf_get_name(props.buf)
+          local helpers = require("helpers")
+          return helpers.shorten_path_styled(path, {
+            short_len = 1,
+            tail_count = 2,
+            head_max = 4,
+            head_style = { group = "Comment" },
+          })
+        end,
+      })
+    end,
+  },
+  -- Language-specific plugins
+  {
+    "hashivim/vim-terraform",
+    ft = "terraform",
+  },
+  {
+    "dag/vim-fish",
+    ft = "fish",
+  },
+  {
+    "lifepillar/pgsql.vim",
+    ft = "sql",
+    config = function()
+      vim.g.sql_type_default = "pgsql"
+    end,
+  },
+  -- LSP Plugins
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -152,53 +205,6 @@ require("lazy").setup({
       require("nvim-treesitter").setup()
       vim.opt.foldmethod = "expr"
       vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    end,
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
-    keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-      sections = {
-        lualine_x = { "filetype" },
-      },
-      tabline = {
-        lualine_a = { {
-          "tabs",
-          mode = 2,
-          max_length = function()
-            return vim.o.columns
-          end,
-        } },
-      },
-    },
-  },
-  {
-    "b0o/incline.nvim",
-    config = function()
-      require("incline").setup({
-        render = function(props)
-          local path = vim.api.nvim_buf_get_name(props.buf)
-          local helpers = require("helpers")
-          return helpers.shorten_path_styled(path, {
-            short_len = 1,
-            tail_count = 2,
-            head_max = 4,
-            head_style = { group = "Comment" },
-          })
-        end,
-      })
     end,
   },
 })
