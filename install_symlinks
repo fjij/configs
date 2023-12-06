@@ -6,7 +6,11 @@ set -euo pipefail
 symlink() {
   OG=$(readlink -f $1)
   if [ "$OG" != "$(readlink -f $2)" ]; then
-    ln -snT $OG $2
+    if [ -e "$2" ]; then
+      >&2 echo "File already exists: $2"
+      exit 1
+    fi
+    ln -sn $OG $2
   fi
 }
 
@@ -23,5 +27,6 @@ symlink ./scripts $HOME/scripts
 symlink ./fish $HOME/.config/fish
 symlink ./ssh/rc $HOME/.ssh/rc
 symlink ./alacritty $HOME/.config/alacritty
+symlink ./yabai $HOME/.config/yabai
 
 popd > /dev/null
