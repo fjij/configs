@@ -5,6 +5,7 @@ brew "git"
 brew "tmux"
 brew "fish"
 brew "jq"
+brew "rsync"
 
 # glitter
 brew "bat"
