@@ -16,6 +16,7 @@ return {
     keys = {
       { "<C-p>", ":Telescope find_files<cr>", desc = "Find files" },
       { "<leader>ps", ":Telescope live_grep<cr>", desc = "Live grep" },
+      { "<leader>b", ":Telescope buffers<cr>", desc = "Live grep" },
     },
     config = function()
       require("telescope").setup({
@@ -83,5 +84,29 @@ return {
         end,
       })
     end,
+  },
+  {
+    "pocco81/true-zen.nvim",
+    opts = {
+      modes = {
+        ataraxis = {
+          minimum_writing_area = {
+            width = 88,
+          },
+          callbacks = {
+            open_pre = function ()
+              require("incline").disable()
+            end,
+            close_pre = function ()
+              require("incline").enable()
+            end,
+          }
+        }
+      },
+      integrations = {
+        tmux = true,
+        lualine = true,
+      },
+    }
   },
 }
