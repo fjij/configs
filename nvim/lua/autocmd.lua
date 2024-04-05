@@ -53,6 +53,16 @@ autocmd("FileType", {
   callback = use_tabs(4),
 })
 
+augroup("writing", {})
+
+autocmd("FileType", {
+  group = "writing",
+  pattern = { "markdown", "text" },
+  callback = function ()
+    vim.opt.textwidth = 80
+  end,
+})
+
 autocmd("LspAttach", {
   desc = "LSP actions",
   callback = function(event)
