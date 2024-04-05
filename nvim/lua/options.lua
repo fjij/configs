@@ -45,15 +45,12 @@ opt.guicursor = ""
 -- Misc
 opt.termguicolors = true
 
--- Tabpages
-opt.showtabline = 2
+-- Tabline
+opt.showtabline = 1
 
 -- Splits
 opt.splitright = true
 opt.splitbelow = true
-
--- Hide command line
-opt.cmdheight = 0
 
 -- Folding
 function _G.my_fold_text()
@@ -72,6 +69,3 @@ opt.fillchars = "fold: "
 
 -- Disable inline LSP warnings
 vim.diagnostic.config({ virtual_text = false })
-
--- One shared status line
-opt.laststatus = 3

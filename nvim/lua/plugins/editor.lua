@@ -47,45 +47,6 @@ return {
     keys = { { "<leader>pv", "<cmd>Neotree<cr>", desc = "Neotree" } },
   },
   {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-      sections = {
-        lualine_x = { "filetype" },
-      },
-      tabline = {
-        lualine_a = {
-          {
-            "tabs",
-            mode = 2,
-            max_length = function()
-              return vim.o.columns
-            end,
-          },
-        },
-      },
-    },
-  },
-  {
-    "b0o/incline.nvim",
-    config = function()
-      require("incline").setup({
-        render = function(props)
-          local path = vim.api.nvim_buf_get_name(props.buf)
-          local helpers = require("helpers")
-          return helpers.shorten_path_styled(path, {
-            short_len = 1,
-            tail_count = 2,
-            head_max = 4,
-            head_style = { group = "Comment" },
-          })
-        end,
-      })
-    end,
-  },
-  {
     "pocco81/true-zen.nvim",
     opts = {
       modes = {
@@ -93,14 +54,6 @@ return {
           minimum_writing_area = {
             width = 88,
           },
-          callbacks = {
-            open_pre = function ()
-              require("incline").disable()
-            end,
-            close_pre = function ()
-              require("incline").enable()
-            end,
-          }
         }
       },
       integrations = {
