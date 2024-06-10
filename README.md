@@ -66,3 +66,12 @@ smoothing. Hopefully it looks better.
 defaults -currentHost write -g AppleFontSmoothing -int 0
 sudo reboot
 ```
+
+## 8. Use SSH for GitHub CLI
+
+The GitHub CLI clones using HTTPS by default, which isn't my preferred option.
+Run this command to make it use SSH instead.
+
+```sh
+gh config set git_protocol ssh
+```
