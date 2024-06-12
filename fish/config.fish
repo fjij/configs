@@ -75,3 +75,8 @@ end
 if test -e /etc/wsl.conf
     source ~/.config/fish/wsl_config.fish
 end
+
+# Cargo
+if test -e ~/.cargo/bin
+    fish_add_path ~/.cargo/bin
+end
