@@ -59,7 +59,18 @@ autocmd("FileType", {
   group = "writing",
   pattern = { "markdown", "text" },
   callback = function ()
-    vim.opt.textwidth = 80
+    opt.textwidth = 80
+    opt.spell = true
+
+    -- Disable the "buffer" cmp source when writing
+    local cmp = require("cmp")
+    local sources = cmp.get_config().sources
+    for i = #sources, 1, -1 do
+      if sources[i].name == "buffer" then
+        table.remove(sources, i)
+      end
+    end
+    cmp.setup.buffer({ sources = sources })
   end,
 })
 
