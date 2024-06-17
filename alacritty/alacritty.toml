@@ -1,0 +1,17 @@
+[font]
+size = 20
+
+[font.normal]
+family = "Codelia Nerd Font"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+dynamic_padding = true
+dynamic_title = false
+
+[window.dimensions]
+columns = 88
+lines = 28
