@@ -19,6 +19,7 @@ pushd $DIRNAME > /dev/null
 
 # Setup symlinks
 mkdir -p $HOME/.config
+mkdir -p $HOME/.ssh
 symlink ./nvim $HOME/.config/nvim
 symlink ./tmux/tmux.conf $HOME/.tmux.conf
 symlink ./git/gitconfig $HOME/.gitconfig
