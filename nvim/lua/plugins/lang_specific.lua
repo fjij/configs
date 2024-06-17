@@ -14,4 +14,8 @@ return {
       vim.g.sql_type_default = "pgsql"
     end,
   },
+  {
+    "evanleck/vim-svelte",
+    ft = "svelte",
+  },
 }
