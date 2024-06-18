@@ -93,6 +93,14 @@ brew bundle install --file ./homebrew/casks/Brewfile
 
 These programs need to be configured to auto-start.
 
+### 3. Configure Yabai
+
+```sh
+yabai --start-service
+```
+
+You'll have to run this again after enabling accessibility control.
+
 ### 3. Install Fonts
 
 ### (Optional, Mac Only) Disable font smoothing
