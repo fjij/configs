@@ -2,28 +2,51 @@
 
 Dotfiles and script to install programs
 
-## 1. Install symlinks
+## Basic Setup
+
+### 1. Clone this repo via SSH
+
+```sh
+git clone git@github.com:fjij/configs.git
+```
+
+### 2. Install symlinks
 
 ```sh
 ./install_symlinks
 ```
 
-## 2. Install homebrew
+### 3. Install Homebrew
+
+**Mac:**
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Linux:**
 
 ```sh
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-You may need to run one of the outputted commands to temporarily add brew to
+You will need to run one of the outputted commands to temporarily add brew to
 your path.
 
-## 3. Install programs from Brewfile
+**Mac:**
+
+```sh
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/$USER/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+### 4. Install shell programs from Brewfile
 
 ```sh
 brew bundle install --file ./homebrew/Brewfile
 ```
 
-## 4. Set fish as default shell
+### 5. Set fish as default shell
 
 Add fish to the list of valid shells
 
@@ -31,43 +54,25 @@ Add fish to the list of valid shells
 echo $(which fish) | sudo tee -a /etc/shells
 ```
 
-Change the default shell
+Change default shell
+
+**Mac:**
 
 ```sh
 chsh -s $(which fish)
 ```
 
-Alternatively
+**Linux:**
 
 ```sh
 sudo chsh -s $(which fish) $(whoami)
 ```
 
-You might need to reboot after this one.
+You may need to reboot or restart your terminal after this one.
 
-## 5. (Optional) Install casks
+## Configuring CLI Tools
 
-```sh
-brew bundle install --file ./homebrew/casks/Brewfile
-```
-
-## 6. (Optional) Sign in to 1password CLI
-
-You can use a service account token using `./fish/local_config.fish`.
-
-Read the documentation for more.
-
-## 7. (MacOS Only) Disable font smoothing
-
-If fonts look jagged on external monitors, you can run this to disable font
-smoothing. Hopefully it looks better.
-
-```sh
-defaults -currentHost write -g AppleFontSmoothing -int 0
-sudo reboot
-```
-
-## 8. Use SSH for GitHub CLI
+### 1. Use SSH for GitHub CLI
 
 The GitHub CLI clones using HTTPS by default, which isn't my preferred option.
 Run this command to make it use SSH instead.
@@ -75,3 +80,40 @@ Run this command to make it use SSH instead.
 ```sh
 gh config set git_protocol ssh
 ```
+
+## GUI Programs Setup
+
+### 1. Install GUI programs from Brewfile
+
+```sh
+brew bundle install --file ./homebrew/casks/Brewfile
+```
+
+### 2. Configure UnnaturalScrollWheels and MeetingBar
+
+These programs need to be configured to auto-start.
+
+### 3. Install Fonts
+
+### (Optional, Mac Only) Disable font smoothing
+
+If fonts look jagged on external monitors, you can run this to disable font
+smoothing. Hopefully it looks better. This probably won't make much of a
+difference thought.
+
+```sh
+defaults -currentHost write -g AppleFontSmoothing -int 0
+sudo reboot
+```
+
+## Mac Setup Guide
+
+### 1. Increase Key Repeat
+
+In keyboard settings, update key repeat and delay to the following values:
+
+![key repeat](./images/key_repeat.png)
+
+### 2. Rebind Caps Lock to ESC
+
+Also in the keyboard settings, this can be done by clicking "Modifier Keys...".
