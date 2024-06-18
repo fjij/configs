@@ -30,10 +30,10 @@ git clone git@github.com:fjij/configs.git
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-You will need to run one of the outputted commands to temporarily add brew to
+You may need to run one of the outputted commands to temporarily add brew to
 your path.
 
-**Mac:**
+**Apple Silicon Mac:**
 
 ```sh
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/$USER/.zprofile
