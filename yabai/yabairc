@@ -19,3 +19,5 @@ yabai -m config                        \
     right_padding         $PADDING     \
     window_gap            $PADDING     \
     layout                bsp
+
+# yabai -m rule --add app="^System Preferences$" manage=off
