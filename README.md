@@ -81,6 +81,15 @@ Run this command to make it use SSH instead.
 gh config set git_protocol ssh
 ```
 
+## Decrypting the Secret Folder
+
+After installing the CLI tools, you should be able to decrypt the secret folder
+using the Configs Password.
+
+```sh
+./decrypt_secret
+```
+
 ## GUI Programs Setup
 
 ### 1. Install GUI programs from Brewfile
@@ -102,6 +111,8 @@ yabai --start-service
 You'll have to run this again after enabling accessibility control.
 
 ### 3. Install Fonts
+
+Install the fonts directly from the secret folder.
 
 ### (Optional, Mac Only) Disable font smoothing
 
