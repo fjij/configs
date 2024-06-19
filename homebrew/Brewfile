@@ -2,6 +2,7 @@
 brew "ripgrep"
 brew "neovim"
 brew "git"
+brew "git-lfs"
 brew "tmux"
 brew "fish"
 brew "jq"
