@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -euo pipefail
+
+DIRNAME="$( dirname -- "${BASH_SOURCE[0]}" )"
+pushd $DIRNAME > /dev/null
+
+case "$(uname -s)" in
+    Linux*)     OS=Linux;;
+    Darwin*)    OS=Mac;;
+esac
+
+echo "OS detected: $OS."
+
+echo "Installing symlinks..."
+
+./install_symlinks
+
+echo "Installing Homebrew..."
+
+if [ "$OS" == "Linux" ]; then
+  NONINTERACTIVE=1
+fi
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+if [ "$OS" == "Mac" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ "$OS" == "Linux" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+echo "Installing shell programs..."
+
+brew bundle install --file ./homebrew/Brewfile
+
+echo "Changing shell to Fish..."
+
+echo $(which fish) | sudo tee -a /etc/shells
+
+if [ "$OS" == "Mac" ]; then
+  chsh -s $(which fish)
+elif [ "$OS" == "Linux" ]; then
+  sudo chsh -s $(which fish) $(whoami)
+fi
+
+echo "Bootstrap complete."
+echo "Please restart shell to use Fish."
+
+popd > /dev/null

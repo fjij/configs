@@ -4,6 +4,12 @@ Dotfiles and script to install programs
 
 ## Basic Setup
 
+This section should be automated through the bootstrap script.
+
+```sh
+./bootstrap
+```
+
 ### 1. Clone this repo via SSH
 
 ```sh
