@@ -40,6 +40,13 @@ your path.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
+**Linux:**
+
+```sh
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
 ### 4. Install shell programs from Brewfile
 
 ```sh
