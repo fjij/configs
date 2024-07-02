@@ -18,4 +18,8 @@ return {
     "evanleck/vim-svelte",
     ft = "svelte",
   },
+  {
+    "jvirtanen/vim-hcl",
+    ft = "hcl",
+  },
 }
