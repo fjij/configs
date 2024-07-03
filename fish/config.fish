@@ -57,6 +57,7 @@ abbr guncommit git reset HEAD~
 # Misc abbreviations
 abbr x exit
 abbr cls clear
+abbr uk ultrakill
 
 # Github
 abbr issues gh issue list -a @me
