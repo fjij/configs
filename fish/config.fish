@@ -81,3 +81,7 @@ end
 if test -e ~/.cargo/bin
     fish_add_path ~/.cargo/bin
 end
+
+# Zoxide
+zoxide init fish | source
+abbr cd z
