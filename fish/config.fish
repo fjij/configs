@@ -83,5 +83,7 @@ if test -e ~/.cargo/bin
 end
 
 # Zoxide
-zoxide init fish | source
-abbr cd z
+if type -q zoxide
+    zoxide init fish | source
+    abbr cd z
+end
