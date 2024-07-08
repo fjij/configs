@@ -16,6 +16,7 @@ brew "gh"
 brew "tldr"
 brew "zoxide"
 brew "fzf"
+brew "stylua"
 # brew "pandoc"
 
 # gamer

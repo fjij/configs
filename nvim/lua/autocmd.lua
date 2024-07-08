@@ -58,7 +58,7 @@ augroup("writing", {})
 autocmd("FileType", {
   group = "writing",
   pattern = { "markdown", "text" },
-  callback = function ()
+  callback = function()
     opt.textwidth = 80
     opt.spell = true
 

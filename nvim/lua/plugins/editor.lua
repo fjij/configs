@@ -54,12 +54,12 @@ return {
           minimum_writing_area = {
             width = 88,
           },
-        }
+        },
       },
       integrations = {
         tmux = true,
         lualine = true,
       },
-    }
+    },
   },
 }

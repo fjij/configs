@@ -25,7 +25,8 @@ return {
         dependencies = {
           "rafamadriz/friendly-snippets",
         },
-      }
+        build = "make install_jsregexp",
+      },
     },
     config = function()
       local cmp = require("cmp")
@@ -46,9 +47,35 @@ return {
           { name = "luasnip" },
         },
         mapping = {
-          ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-          ["<Up>"] = cmp.mapping.select_prev_item(),
-          ["<Down>"] = cmp.mapping.select_next_item(),
+          ["<CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              if luasnip.expandable() then
+                luasnip.expand()
+              else
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+              end
+            else
+              fallback()
+            end
+          end),
+          ["<Down>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.locally_jumpable(1) then
+              luasnip.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<Up>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
         },
       })
     end,
@@ -89,15 +116,14 @@ return {
         end,
       })
 
-      lspconfig.denols.setup {
+      lspconfig.denols.setup({
         root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-      }
+      })
 
-      lspconfig.tsserver.setup {
+      lspconfig.tsserver.setup({
         root_dir = lspconfig.util.root_pattern("package.json"),
-        single_file_support = false
-      }
+        single_file_support = false,
+      })
     end,
-
   },
 }
