@@ -149,3 +149,7 @@ In keyboard settings, update key repeat and delay to the following values:
 ### 2. Rebind Caps Lock to ESC
 
 Also in the keyboard settings, this can be done by clicking "Modifier Keys...".
+
+### 3. Disable startup sound
+
+Go to "System Settings > Sound > Play sound on startup" and disable it.
