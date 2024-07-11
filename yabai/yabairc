@@ -6,7 +6,7 @@
 #   yabai --stop-service
 
 
-PADDING=20
+PADDING=0
 
 yabai -m config                        \
     window_origin_display default      \
