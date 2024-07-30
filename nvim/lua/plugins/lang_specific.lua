@@ -22,4 +22,8 @@ return {
     "jvirtanen/vim-hcl",
     ft = "hcl",
   },
+  {
+    "NoahTheDuke/vim-just",
+    ft = "just",
+  },
 }
