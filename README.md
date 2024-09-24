@@ -1,5 +1,8 @@
 # configs
 
+**Update (September 24, 2024): I am archiving this repository. Check out my [nix
+configs](https://github.com/fjij/nix-configs) instead!**
+
 Dotfiles and script to install programs
 
 ## Basic Setup
